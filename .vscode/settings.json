@@ -2,7 +2,18 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
   "editor.formatOnSave": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "octref.vetur",
   "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"]
+"eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "vue"
+],
+"prettier.tabWidth": 4,
+"prettier.useTabs": true,
+"html.format.wrapLineLength": 0,
+"vetur.format.options.tabSize": 4,
+"prettier.printWidth": 1000,
+"vetur.format.options.useTabs": true
 }
