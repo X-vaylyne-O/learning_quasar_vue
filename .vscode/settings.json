@@ -15,5 +15,12 @@
 "html.format.wrapLineLength": 0,
 "vetur.format.options.tabSize": 4,
 "prettier.printWidth": 1000,
-"vetur.format.options.useTabs": true
+"vetur.format.options.useTabs": true,
+"[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+},
+"prettier.jsxSingleQuote": true,
+"prettier.singleQuote": true,
+"javascript.preferences.quoteStyle": "single",
+"typescript.preferences.quoteStyle": "single"
 }

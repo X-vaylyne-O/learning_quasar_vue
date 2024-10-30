@@ -19,6 +19,6 @@
 
 <script setup>
 defineOptions({
-	name: "src-pages-IndexPage.vue",
+	name: "src-pages-IndexPage",
 });
 </script>
