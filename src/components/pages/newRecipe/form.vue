@@ -54,8 +54,16 @@ const formItem = ref({
     url: ''
 });
 
-const validateURL =  ({ val }) => /^(?:(?:http?):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i
-        .test(val) || 'Must be a valid url (http)';
+const validateURL =  ({ val }) => {
+    if (!val) return true;
+    return /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/i
+        .test(val) || 'Must be a valid URL (https)';
+};
+
+const formRules = {
+    name: [],
+    url: [ validateURL ]
+};
 
 const errorItem = ref({});
 const formValid = computed(() => {
@@ -64,9 +72,20 @@ const formValid = computed(() => {
 
 watch(formItem.value, (newValue, oldValue) => {
     console.log('newValue:', newValue);
-    if(newValue.url) {
-        const validURL  = validateURL({ val: newValue.link});
-        if (typeof validURL === 'string') errorItem.value['url'] = validURL;
-    }
+    Object.entries(newValue).forEach(([key, value]) => {
+        // if there's no value in the formItem, there can't be an errorItem for it
+        if (!value || typeof value !== 'string') delete errorItem.value[key];
+        // make sure there's rules for the key
+        else if (formRules[key] && Array.isArray(formRules[key]) && formRules[key].length) {
+            formRules[key].forEach((rule) => {
+                // ensure the rule is a function;
+                if (typeof rule !== 'function') return;
+                const fnResponse = rule({ val: value });
+                // if its a string - then there's an error. otherwise, its valid
+                if (typeof fnResponse === 'string') errorItem.value[key] = fnResponse;
+                else delete errorItem.value[key];
+            })
+        }
+    })
 })
 </script>
