@@ -61,6 +61,12 @@ const linksList = [
     link: '/appetizers'
   },
   {
+    title: 'Dessert',
+    caption: 'Did we leave any room?',
+    icon: 'mdi-ice-cream',
+    link: '/dessert'
+  },
+  {
     title: 'Github',
     caption: 'github.com/quasarframework',
     icon: 'code',

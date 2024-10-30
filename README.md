@@ -16,7 +16,9 @@ npm install
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+yarn quasar dev
+# or
+npm quasar dev
 ```
 
 

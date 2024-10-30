@@ -18,6 +18,11 @@ const routes = [
                 path: 'appetizers',
                 beforeEnter: [ recentVisitor ],
                 component: () => import("pages/Appetizers.vue"),
+            },
+            {
+                path: 'dessert',
+                beforeEnter: [ recentVisitor ],
+                component: () => import("pages/Dessert.vue")
             }
         ],
     },
