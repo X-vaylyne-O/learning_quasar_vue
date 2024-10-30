@@ -61,6 +61,12 @@ const linksList = [
     link: '/appetizers'
   },
   {
+    title: 'New Recipe',
+    caption: 'Add to your collection',
+    icon: 'mdi-clipboard-outline',
+    link: '/new-recipe'
+  },
+  {
     title: 'Github',
     caption: 'github.com/quasarframework',
     icon: 'code',
