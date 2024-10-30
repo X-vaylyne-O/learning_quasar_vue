@@ -55,10 +55,10 @@ defineOptions({
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Appetizers',
+    caption: 'Start your meal off right',
+    icon: 'mdi-abacus',
+    link: '/appetizers'
   },
   {
     title: 'Github',
