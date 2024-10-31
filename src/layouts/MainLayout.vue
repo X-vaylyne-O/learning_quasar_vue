@@ -61,10 +61,23 @@ const linksList = [
     link: '/appetizers'
   },
   {
+    title: 'Main Course',
+    caption: 'Let\'s dig in',
+    icon: 'mdi-instrument-triangle',
+    link: '/main-course'
+  },
+  {
+    title: 'Dessert',
+    caption: 'Did we leave any room?',
+    icon: 'mdi-ice-cream',
+    link: '/dessert'
+  },
+  {
     title: 'New Recipe',
     caption: 'Add to your collection',
     icon: 'mdi-clipboard-outline',
     link: '/new-recipe'
+
   },
   {
     title: 'Github',

@@ -20,6 +20,16 @@ const routes = [
                 component: () => import("pages/Appetizers.vue"),
             },
             {
+                path: 'dessert',
+                beforeEnter: [ recentVisitor ],
+                component: () => import("pages/Dessert.vue")
+            },
+            {
+                path: 'main-course',
+                beforeEnter: [ recentVisitor ],
+                component: () => import("pages/MainCourse.vue")
+            },
+            {
                 path: 'new-recipe',
                 beforeEnter: [],
                 component: () => import("pages/NewRecipe.vue"),
