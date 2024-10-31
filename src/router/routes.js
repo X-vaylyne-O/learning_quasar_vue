@@ -28,7 +28,12 @@ const routes = [
                 path: 'main-course',
                 beforeEnter: [ recentVisitor ],
                 component: () => import("pages/MainCourse.vue")
-            }
+            },
+            {
+                path: 'new-recipe',
+                beforeEnter: [],
+                component: () => import("pages/NewRecipe.vue"),
+            },
         ],
     },
 
