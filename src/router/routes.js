@@ -23,6 +23,11 @@ const routes = [
                 path: 'dessert',
                 beforeEnter: [ recentVisitor ],
                 component: () => import("pages/Dessert.vue")
+            },
+            {
+                path: 'main-course',
+                beforeEnter: [ recentVisitor ],
+                component: () => import("pages/MainCourse.vue")
             }
         ],
     },

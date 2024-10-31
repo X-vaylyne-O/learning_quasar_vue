@@ -14,6 +14,6 @@ const props = defineProps ({
     }
 })
 defineOptions({
-    name:"src-components-pages-dessert-title"
+    name:"src-components-pages-mainCourse-title"
 })
 </script>

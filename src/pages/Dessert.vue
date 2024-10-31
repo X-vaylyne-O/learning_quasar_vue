@@ -1,6 +1,6 @@
 <template>
     <q-page class="flex flex-center">
-        <Title :title="'Dessert?'"/>
+        <Title :title="'Dessert'"/>
     </q-page>
 </template>
 
