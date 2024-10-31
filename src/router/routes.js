@@ -18,7 +18,12 @@ const routes = [
                 path: 'appetizers',
                 beforeEnter: [ recentVisitor ],
                 component: () => import("pages/Appetizers.vue"),
-            }
+            },
+            {
+                path: 'new-recipe',
+                beforeEnter: [],
+                component: () => import("pages/NewRecipe.vue"),
+            },
         ],
     },
 
